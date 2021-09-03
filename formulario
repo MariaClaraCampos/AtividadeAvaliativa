@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Nome</title>
+</head>
+<body>
+	<h3>Olá, seja bem vindo(a)!!!</h3>
+	
+	<form action="ServletPaginaAgenda" method="get">
+		<input type="text" name="nome" placeholder="Digite seu nome:"/><br>
+		<input type="date" id="data" placeholder="Digite sua data de nascimento:"/><br>
+		<input type="text" id="telefone" placeholder="Digite seu telefone:"/><br>
+		<input type="email" id="email" placeholder="Digite seu email:"/><br>
+		<input type="submit" value="Enviar"/>
+	</form>
+</body>
+</html>
