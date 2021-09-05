@@ -1,10 +1,7 @@
 package atividades;
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletPaginaAgenda
  */
-@WebServlet("/ServletPaginaAgenda")
-public class ServletPaginaAgenda extends HttpServlet {
+@WebServlet("/ServletAgenda")
+public class ServletAgenda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletPaginaAgenda() {
+    public ServletAgenda() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,18 +28,13 @@ public class ServletPaginaAgenda extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.setContentType("formulario/html");
 		PrintWriter saida = response.getWriter();
 		saida.write("<HTML><BODY>");
-		saida.write("Bem vindo ao formulário para cadastrar seus dados. Clique em prosseguir para continuar. <BR>");
-		
-		Enumeration<String> nomesParametros = request.getParameterNames();
-		
-		while (nomesParametros.hasMoreElements()) {
-			saida.write(request.getParameter(nomesParametros.nextElement().toString()));
-			saida.write(" , ");
-		}
+		saida.write("Olá, " + request.getParameter("nome") + ", seja bem vindo(a)!!! <BR>" + "Sua data de nascimento é: " + request.getParameter("nome1") + " ;<BR>");
+		saida.write("Seu email é:  " + request.getParameter("nome3") + ".<BR>" + "Seu telefone é: " + request.getParameter("nome2") + " ;<BR>");
+		saida.write("Agradecemos pelas informações!");
+		saida.write("</BODY></HTML>");
+		saida.close();
 	}
 
 	/**
