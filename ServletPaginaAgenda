@@ -1,8 +1,10 @@
-package atividade_avaliativa;
+package atividades;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,21 +31,20 @@ public class ServletPaginaAgenda extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("index.jsp");
 		PrintWriter saida = response.getWriter();
-		saida.write("<HTML><BODY>");
-		saida.write("Bem vindo ao formulário para acessar os dados dos alunos. <BR>");
-		
-		Enumeration<String> nomesParametros = request.getParameterNames();
-		
-		while (nomesParametros.hasMoreElements()) {
-			saida.write(request.getParameter(nomesParametros.nextElement().toString()));
-			saida.write(" , ");
-	}
+		saida.write("<HTML><TITLE>PaginaAgenda</TITLE><BODY>");
+		saida.write("Bem vindo ao formulário para cadastrar seus dados.<BR>");
+		saida.write("Clique em prosseguir para cadastrar seus dados.<BR>");
+		saida.write("<form action=\"/atividade/Index.jsp\" method=\"get\">");
 
-	private static List<PaginaAgenda> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		saida.write("<input type=\"submit\" value=\"PROSSEGUIR\" />");
+		
+		saida.write("</form>");
+		saida.write("</BODY></HTML>");
+		saida.close();
+			}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
