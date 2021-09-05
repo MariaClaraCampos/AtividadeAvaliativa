@@ -32,19 +32,18 @@ public class ServletPaginaAgenda extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.setContentType("index.jsp");
 		PrintWriter saida = response.getWriter();
 		saida.write("<HTML><TITLE>PaginaAgenda</TITLE><BODY>");
 		saida.write("Bem vindo ao formulário para cadastrar seus dados.<BR>");
 		saida.write("Clique em prosseguir para cadastrar seus dados.<BR>");
-		saida.write("<form action=\"/atividade/Index.jsp\" method=\"get\">");
+		saida.write("<form action=\"/atividade/formulario.jsp\" method=\"get\">");
 
 		saida.write("<input type=\"submit\" value=\"PROSSEGUIR\" />");
 		
 		saida.write("</form>");
 		saida.write("</BODY></HTML>");
 		saida.close();
-			}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
